@@ -1,5 +1,6 @@
-
+//import CSS
 import '../assets/App.css';
+//import components
 import Modal from '../components/Modal'
 import Header from '../components/Header'
 import SearchBox from '../components/SearchBox'

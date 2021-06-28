@@ -2,10 +2,10 @@ import React from 'react'
 
 const SearchBox = () => {
     return (
-        <section class="search-box-container">
+        <section className="search-box-container">
             
-            <form action="" class="grid grid-col-1">
-                <input placeholder="Enter Movie Title" class="form-control" type="text" id="filter"/>
+            <form action="" className="grid grid-col-1">
+                <input placeholder="Enter Movie Title" className="form-control" type="text" id="filter"/>
             </form>
     
         </section>
