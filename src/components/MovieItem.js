@@ -1,5 +1,8 @@
 // *****CHILD*****
 
+//import icons
+import { FaWindowClose } from "react-icons/fa";
+
 const MovieItem = (props) => {
     return (
         <div class="movie-container">
@@ -7,7 +10,7 @@ const MovieItem = (props) => {
                 <p class="">
                     {props.title}
                 </p>
-                <i class="fas fa-times-circle icon-cursor icon-size-dbl-xlg grid-x-right"></i> 
+                <FaWindowClose className="icon-cursor icon-size-dbl-xlg grid-x-right"/>
             </div>
 
             <p class="movie-description">

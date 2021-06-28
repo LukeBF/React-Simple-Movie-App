@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import SearchBox from '../components/SearchBox'
 import AddMovieForm from '../components/AddMovieForm';
 import MovieList from '../components/MovieList';
+import Footer from '../components/Footer';
 
 const App=()=> {
   return (
@@ -16,7 +17,7 @@ const App=()=> {
             <AddMovieForm />
             <MovieList />
         </main>
-
+        <Footer />
 
     </div>
   );

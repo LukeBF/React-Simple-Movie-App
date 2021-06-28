@@ -2,9 +2,12 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div>
-            
-        </div>
+          
+        <footer>
+            <p>
+                Movie Management App
+            </p>
+        </footer>
     )
 }
 
