@@ -2,28 +2,28 @@ import React from 'react'
 
 const AddMovieForm = () => {
     return (
-        <section class="">
+        <section className="">
             <form>
-                <div class="form-control-container">
+                <div className="form-control-container">
 
-                    <label for="title"> Title</label>
+                    <label htmlFor="title"> Title</label>
 
-                    <input class="form-control" type="text" id="title"  />
-                    <span class="error"></span>
+                    <input className="form-control" type="text" id="title"  />
+                    <span className="error"></span>
 
                 </div>
 
-                <div class="form-control-container">
+                <div className="form-control-container">
                     
-                    <label for="description"> Description</label>
-                    <textarea class="form-control" id="description" ></textarea>
+                    <label htmlFor="description"> Description</label>
+                    <textarea className="form-control" id="description" ></textarea>
 
-                    <span class="error"></span>
+                    <span className="error"></span>
                 
                 </div>
             
-                <div class="form-control-container">
-                    <button  class="btn btn-primary" type="button">Save movie</button>
+                <div className="form-control-container">
+                    <button  className="btn btn-primary" type="button">Save movie</button>
                 </div>  
             </form>
         </section>

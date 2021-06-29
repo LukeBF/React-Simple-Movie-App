@@ -2,10 +2,10 @@ import React from 'react'
 
 const Modal = () => {
     return (
-        <div class="hide">
+        <div className="hide">
 
-            <div class="modal" >
-                <div class="modal-container">blah</div>
+            <div className="modal" >
+                <div className="modal-container">blah</div>
             </div>
 
         </div>
