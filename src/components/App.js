@@ -18,6 +18,13 @@ const App=()=> {
     isVisible:false
   });
 
+  const [addFormState,setAddFormState] = useState(false)
+
+  const toggleAddForm=()=>{
+
+    setAddFormState(!addFormState)
+  }
+
   const addMovie=(newMovie)=>{
 
     setMovies([...movies,newMovie])
@@ -85,10 +92,10 @@ const App=()=> {
   return (
     <div className="container">
         <Modal onHide={hideModal} modalState={modal}/>
-        <Header />
+        <Header onToggleAddForm={toggleAddForm}/>
         <SearchBox />
         <main>
-            <AddMovieForm onAddMovie={addMovie}/>
+            <AddMovieForm addFormState={addFormState} onAddMovie={addMovie}/>
             <MovieList movies={movies} onDeleteMovieApp={deleteMovie}/>
         </main>
         <Footer />

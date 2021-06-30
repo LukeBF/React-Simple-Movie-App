@@ -13,7 +13,7 @@ const AddMovieForm = (props) => {
 
     const  [errordescription, setErrorDescription] = useState("")
 
-    const validateForm = () => {
+    const validateForm = (props) => {
 
         let isValidated = true;
         
@@ -42,7 +42,7 @@ const AddMovieForm = (props) => {
     
 
     return (
-        <section className="">
+        <section className={props.addFormState ? "" : "hide"}>
             <form>
                 <div className="form-control-container">
 
