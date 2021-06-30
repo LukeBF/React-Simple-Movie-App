@@ -10,7 +10,7 @@ const MovieList = (props) => {
         <section className="movie-list-continer">
             {/* map each movie object to a move item */}
            {props.movies.map((movie)=>(
-               <MovieItem key={movie.id} id={movie.id} onDeleteMovie={props.onDelete} title={movie.title} description={movie.description}/>
+               <MovieItem key={movie.id} id={movie.id} onDeleteMovieList={props.onDeleteMovieApp} title={movie.title} description={movie.description}/>
            ))}
         </section>
     )

@@ -14,6 +14,13 @@ const App=()=> {
 
 const [movies, setMovies] = useState([]);
 
+const addMovie=(newMovie)=>{
+
+
+  setMovies([...movies,newMovie])
+  alert(`${newMovie.title} was added successfully!`)
+}
+
   // Create the clickHandler function and pass it down to the child MovieItem via props
   const deleteMovie = (id)=>{
       
@@ -61,8 +68,8 @@ const [movies, setMovies] = useState([]);
         <Header />
         <SearchBox />
         <main>
-            <AddMovieForm />
-            <MovieList movies={movies} onDelete={deleteMovie}/>
+            <AddMovieForm onAddMovie={addMovie}/>
+            <MovieList movies={movies} onDeleteMovieApp={deleteMovie}/>
         </main>
         <Footer />
 

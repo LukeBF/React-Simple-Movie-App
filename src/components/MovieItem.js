@@ -5,7 +5,7 @@ import { FaWindowClose } from "react-icons/fa";
 
 const MovieItem = (props) => {
 
-    const clickHandler= () => props.onDeleteMovie(props.id)
+    const clickHandler= () => props.onDeleteMovieList(props.id)
 
     return (
         <div className="movie-container">
