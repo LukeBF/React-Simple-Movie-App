@@ -12,14 +12,29 @@ import { useState,useEffect } from 'react'
 
 const App=()=> {
 
-const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
+  const [modal,setModal] = useState({
+    message:"",
+    isVisible:false
+  });
 
-const addMovie=(newMovie)=>{
+  const addMovie=(newMovie)=>{
 
+    setMovies([...movies,newMovie])
+    //alert(`${newMovie.title} was added successfully!`)
+    setModal({
+      message:`${newMovie.title} was added successfully!`,
+      isVisible:true
+    })
+  }
 
-  setMovies([...movies,newMovie])
-  alert(`${newMovie.title} was added successfully!`)
-}
+  const hideModal=()=>{
+    
+    setModal({
+      message:"",
+      isVisible:false
+    })
+  }
 
   // Create the clickHandler function and pass it down to the child MovieItem via props
   const deleteMovie = (id)=>{
@@ -29,7 +44,12 @@ const addMovie=(newMovie)=>{
           return movie.id != id
       })
 
-      alert(`The movie with id ${id} was deleted!`)
+      setModal({
+        message:`The movie with id ${id} was deleted!`,
+        isVisible:true
+      })
+
+      //alert(`The movie with id ${id} was deleted!`)
       setMovies(newMovies);
   }
       
@@ -64,7 +84,7 @@ const addMovie=(newMovie)=>{
 
   return (
     <div className="container">
-        <Modal />
+        <Modal onHide={hideModal} modalState={modal}/>
         <Header />
         <SearchBox />
         <main>
