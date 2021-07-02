@@ -27,7 +27,10 @@ const App=()=> {
 
   const addMovie=(newMovie)=>{
 
+    localStorage.setItem("movies",JSON.stringify([...movies,newMovie]))
+
     setMovies([...movies,newMovie])
+
     //alert(`${newMovie.title} was added successfully!`)
     setModal({
       message:`${newMovie.title} was added successfully!`,
@@ -51,41 +54,53 @@ const App=()=> {
           return movie.id != id
       })
 
+      localStorage.setItem("movies",JSON.stringify([newMovies]))
+
+      //alert(`The movie with id ${id} was deleted!`)
+      setMovies(newMovies);
+
       setModal({
         message:`The movie with id ${id} was deleted!`,
         isVisible:true
       })
 
-      //alert(`The movie with id ${id} was deleted!`)
-      setMovies(newMovies);
+      
+      
   }
       
   //execute some code right after the component has been loaded
   useEffect(()=>{
-      const fakeDB = [
-          {
-              id:1,
-              title:"Bad Boys II",
-              description:"One of my favourite moview of all time"
-          },
-          {
-              id:2,
-              title:"Avengers: Infinity Wars",
-              description:"The Avengers must stop Thanos, an intergalactic warlord, from getting his hands on all the infinity stones"
-          },
-          {
-              id:3,
-              title:"Star Wars",
-              description:"Adventures of space characters from far, far away"
-          },
-          {
-              id:4,
-              title:"Lion King",
-              description:"As a cub, Simba is forced to leave the Pride Lands after his father Mufasa is murdered by his wicked uncle, Scar."
-          }
-      ]
 
-      setMovies(fakeDB)
+      if(localStorage.getItem("movies"))
+      {
+        const newMovies = JSON.parse(localStorage.getItem("movies"))
+
+        setMovies(newMovies)
+      }
+      // const fakeDB = [
+      //     {
+      //         id:1,
+      //         title:"Bad Boys II",
+      //         description:"One of my favourite moview of all time"
+      //     },
+      //     {
+      //         id:2,
+      //         title:"Avengers: Infinity Wars",
+      //         description:"The Avengers must stop Thanos, an intergalactic warlord, from getting his hands on all the infinity stones"
+      //     },
+      //     {
+      //         id:3,
+      //         title:"Star Wars",
+      //         description:"Adventures of space characters from far, far away"
+      //     },
+      //     {
+      //         id:4,
+      //         title:"Lion King",
+      //         description:"As a cub, Simba is forced to leave the Pride Lands after his father Mufasa is murdered by his wicked uncle, Scar."
+      //     }
+      // ]
+
+      // setMovies(fakeDB)
   },[])
       
 
